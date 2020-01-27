@@ -24,7 +24,6 @@ class Page5ViewController: UITableViewController,SegementSlideContentScrollViewD
     var youtubeURLArray = [String]()
     var channelTitleArray = [String]()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -55,7 +54,6 @@ class Page5ViewController: UITableViewController,SegementSlideContentScrollViewD
                     cell.setNeedsLayout()
                 }
             })
-            
             
             cell.textLabel?.text = self.titleArray[indexPath.row]
             cell.textLabel?.adjustsFontSizeToFitWidth = true
