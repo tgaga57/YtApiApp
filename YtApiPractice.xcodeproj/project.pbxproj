@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,8 @@
 		B19BECA023DD5B310082E9B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B19BEC9E23DD5B310082E9B9 /* Main.storyboard */; };
 		B19BECA223DD5B320082E9B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B19BECA123DD5B320082E9B9 /* Assets.xcassets */; };
 		B19BECA523DD5B320082E9B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B19BECA323DD5B320082E9B9 /* LaunchScreen.storyboard */; };
+		B19BECB023DD75280082E9B9 /* Page1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19BECAF23DD75280082E9B9 /* Page1ViewController.swift */; };
+		B19BECB223DEA4010082E9B9 /* YoutubeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19BECB123DEA4010082E9B9 /* YoutubeData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		B19BECA123DD5B320082E9B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B19BECA423DD5B320082E9B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B19BECA623DD5B320082E9B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B19BECAF23DD75280082E9B9 /* Page1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page1ViewController.swift; sourceTree = "<group>"; };
+		B19BECB123DEA4010082E9B9 /* YoutubeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeData.swift; sourceTree = "<group>"; };
 		F4C5BDF4621438352F0A3AC9 /* Pods-YtApiPractice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YtApiPractice.debug.xcconfig"; path = "Target Support Files/Pods-YtApiPractice/Pods-YtApiPractice.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -48,7 +52,6 @@
 				F4C5BDF4621438352F0A3AC9 /* Pods-YtApiPractice.debug.xcconfig */,
 				450D75A3407F74F63958785A /* Pods-YtApiPractice.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -81,15 +84,41 @@
 		B19BEC9723DD5B310082E9B9 /* YtApiPractice */ = {
 			isa = PBXGroup;
 			children = (
-				B19BEC9823DD5B310082E9B9 /* AppDelegate.swift */,
-				B19BEC9A23DD5B310082E9B9 /* SceneDelegate.swift */,
-				B19BEC9C23DD5B310082E9B9 /* ViewController.swift */,
-				B19BEC9E23DD5B310082E9B9 /* Main.storyboard */,
-				B19BECA123DD5B320082E9B9 /* Assets.xcassets */,
-				B19BECA323DD5B320082E9B9 /* LaunchScreen.storyboard */,
+				B19BECAC23DD72E10082E9B9 /* Model */,
+				B19BECAE23DD74F00082E9B9 /* View */,
+				B19BECAD23DD72EA0082E9B9 /* Controller */,
 				B19BECA623DD5B320082E9B9 /* Info.plist */,
 			);
 			path = YtApiPractice;
+			sourceTree = "<group>";
+		};
+		B19BECAC23DD72E10082E9B9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B19BECB123DEA4010082E9B9 /* YoutubeData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B19BECAD23DD72EA0082E9B9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B19BEC9823DD5B310082E9B9 /* AppDelegate.swift */,
+				B19BEC9A23DD5B310082E9B9 /* SceneDelegate.swift */,
+				B19BEC9C23DD5B310082E9B9 /* ViewController.swift */,
+				B19BECAF23DD75280082E9B9 /* Page1ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B19BECAE23DD74F00082E9B9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B19BEC9E23DD5B310082E9B9 /* Main.storyboard */,
+				B19BECA123DD5B320082E9B9 /* Assets.xcassets */,
+				B19BECA323DD5B320082E9B9 /* LaunchScreen.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,6 +237,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B19BEC9D23DD5B310082E9B9 /* ViewController.swift in Sources */,
+				B19BECB223DEA4010082E9B9 /* YoutubeData.swift in Sources */,
+				B19BECB023DD75280082E9B9 /* Page1ViewController.swift in Sources */,
 				B19BEC9923DD5B310082E9B9 /* AppDelegate.swift in Sources */,
 				B19BEC9B23DD5B310082E9B9 /* SceneDelegate.swift in Sources */,
 			);
