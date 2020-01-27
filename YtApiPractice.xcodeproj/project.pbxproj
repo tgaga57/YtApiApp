@@ -16,6 +16,13 @@
 		B19BECA523DD5B320082E9B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B19BECA323DD5B320082E9B9 /* LaunchScreen.storyboard */; };
 		B19BECB023DD75280082E9B9 /* Page1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19BECAF23DD75280082E9B9 /* Page1ViewController.swift */; };
 		B19BECB223DEA4010082E9B9 /* YoutubeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19BECB123DEA4010082E9B9 /* YoutubeData.swift */; };
+		B19BECB423DEC08D0082E9B9 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19BECB323DEC08D0082E9B9 /* WebViewController.swift */; };
+		B19BECB623DED1E30082E9B9 /* Page2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19BECB523DED1E30082E9B9 /* Page2ViewController.swift */; };
+		B19BECB823DED1F00082E9B9 /* Page3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19BECB723DED1F00082E9B9 /* Page3ViewController.swift */; };
+		B19BECBA23DED1F80082E9B9 /* Page4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19BECB923DED1F80082E9B9 /* Page4ViewController.swift */; };
+		B19BECBC23DED20B0082E9B9 /* Page5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19BECBB23DED20B0082E9B9 /* Page5ViewController.swift */; };
+		B19BECBE23DED2160082E9B9 /* Page6ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19BECBD23DED2160082E9B9 /* Page6ViewController.swift */; };
+		B19BECC023DEDACF0082E9B9 /* おう.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B19BECBF23DEDACE0082E9B9 /* おう.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +38,13 @@
 		B19BECA623DD5B320082E9B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B19BECAF23DD75280082E9B9 /* Page1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page1ViewController.swift; sourceTree = "<group>"; };
 		B19BECB123DEA4010082E9B9 /* YoutubeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeData.swift; sourceTree = "<group>"; };
+		B19BECB323DEC08D0082E9B9 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		B19BECB523DED1E30082E9B9 /* Page2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page2ViewController.swift; sourceTree = "<group>"; };
+		B19BECB723DED1F00082E9B9 /* Page3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page3ViewController.swift; sourceTree = "<group>"; };
+		B19BECB923DED1F80082E9B9 /* Page4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page4ViewController.swift; sourceTree = "<group>"; };
+		B19BECBB23DED20B0082E9B9 /* Page5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page5ViewController.swift; sourceTree = "<group>"; };
+		B19BECBD23DED2160082E9B9 /* Page6ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page6ViewController.swift; sourceTree = "<group>"; };
+		B19BECBF23DEDACE0082E9B9 /* おう.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "おう.mp3"; sourceTree = "<group>"; };
 		F4C5BDF4621438352F0A3AC9 /* Pods-YtApiPractice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YtApiPractice.debug.xcconfig"; path = "Target Support Files/Pods-YtApiPractice/Pods-YtApiPractice.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,6 +102,7 @@
 				B19BECAE23DD74F00082E9B9 /* View */,
 				B19BECAD23DD72EA0082E9B9 /* Controller */,
 				B19BECA623DD5B320082E9B9 /* Info.plist */,
+				B19BECBF23DEDACE0082E9B9 /* おう.mp3 */,
 			);
 			path = YtApiPractice;
 			sourceTree = "<group>";
@@ -106,7 +121,13 @@
 				B19BEC9823DD5B310082E9B9 /* AppDelegate.swift */,
 				B19BEC9A23DD5B310082E9B9 /* SceneDelegate.swift */,
 				B19BEC9C23DD5B310082E9B9 /* ViewController.swift */,
+				B19BECB323DEC08D0082E9B9 /* WebViewController.swift */,
 				B19BECAF23DD75280082E9B9 /* Page1ViewController.swift */,
+				B19BECB523DED1E30082E9B9 /* Page2ViewController.swift */,
+				B19BECB723DED1F00082E9B9 /* Page3ViewController.swift */,
+				B19BECB923DED1F80082E9B9 /* Page4ViewController.swift */,
+				B19BECBB23DED20B0082E9B9 /* Page5ViewController.swift */,
+				B19BECBD23DED2160082E9B9 /* Page6ViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -181,6 +202,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B19BECC023DEDACF0082E9B9 /* おう.mp3 in Resources */,
 				B19BECA523DD5B320082E9B9 /* LaunchScreen.storyboard in Resources */,
 				B19BECA223DD5B320082E9B9 /* Assets.xcassets in Resources */,
 				B19BECA023DD5B310082E9B9 /* Main.storyboard in Resources */,
@@ -237,10 +259,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				B19BEC9D23DD5B310082E9B9 /* ViewController.swift in Sources */,
+				B19BECB423DEC08D0082E9B9 /* WebViewController.swift in Sources */,
+				B19BECBE23DED2160082E9B9 /* Page6ViewController.swift in Sources */,
+				B19BECBA23DED1F80082E9B9 /* Page4ViewController.swift in Sources */,
 				B19BECB223DEA4010082E9B9 /* YoutubeData.swift in Sources */,
+				B19BECB823DED1F00082E9B9 /* Page3ViewController.swift in Sources */,
+				B19BECBC23DED20B0082E9B9 /* Page5ViewController.swift in Sources */,
 				B19BECB023DD75280082E9B9 /* Page1ViewController.swift in Sources */,
 				B19BEC9923DD5B310082E9B9 /* AppDelegate.swift in Sources */,
 				B19BEC9B23DD5B310082E9B9 /* SceneDelegate.swift in Sources */,
+				B19BECB623DED1E30082E9B9 /* Page2ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

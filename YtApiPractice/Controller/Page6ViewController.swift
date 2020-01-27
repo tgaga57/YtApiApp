@@ -12,7 +12,7 @@ import Alamofire
 import SwiftyJSON
 import SDWebImage
 
-class Page1ViewController: UITableViewController,SegementSlideContentScrollViewDelegate {
+class Page6ViewController: UITableViewController,SegementSlideContentScrollViewDelegate {
     
     var youtubeData = YoutubeData()
     
@@ -23,31 +23,14 @@ class Page1ViewController: UITableViewController,SegementSlideContentScrollViewD
     var youtubeURLArray = [String]()
     var channelTitleArray = [String]()
     
-    // リレレッシュ
-    let refresh = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // 引っ張ってリロード　リフレッシュ
-        tableView.refreshControl = refresh
-        // self の部分は自分自身にということ
-        refresh.addTarget(self, action: #selector(update), for: .valueChanged)
-        
-        
         //　データを取ってくる
         getData()
-        tableView.reloadData()
+        // Do any additional setup after loading the view.
     }
-    
-    @objc func update() {
-        getData()
-        tableView.reloadData()
-        refresh.endRefreshing()
-        
-    }
-
-    
     
     @objc var scrollView: UIScrollView{
         
@@ -58,30 +41,13 @@ class Page1ViewController: UITableViewController,SegementSlideContentScrollViewD
     //    override func numberOfSections(in tableView: UITableView) -> Int {
     //
     //    }
+    //
     
         override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "Cell")
             cell.selectionStyle = .none
             let profileImageURL = URL(string: self.imageURLStringArray[indexPath.row] as String)!
-            
-            
-            
-            
-//            cell.imageView?.sd_setImage(with: profileImageURL, completed: nil)
-
-            cell.imageView?.sd_setImage(with: profileImageURL, completed: {(image, error,_,_) in
-                if error == nil {
-                    cell.setNeedsLayout()
-                }
-            })
-            
-            
-            
-            
-            
-            
-            
-            
+            cell.imageView?.sd_setImage(with: profileImageURL, completed: nil)
             cell.textLabel?.text = self.titleArray[indexPath.row]
             cell.detailTextLabel?.text = self.publishedAtArray[indexPath.row]
             cell.textLabel?.adjustsFontSizeToFitWidth = true
@@ -103,7 +69,7 @@ class Page1ViewController: UITableViewController,SegementSlideContentScrollViewD
     
     func getData() {
         
-        var text = "https://www.googleapis.com/youtube/v3/search?key=APIKEY&q=ズラタンイブラヒモビッチ&part=snippet&maxResults=40&order=date"
+        var text = "https://www.googleapis.com/youtube/v3/search?key=APIKEY&q=Programming&part=snippet&maxResults=40&order=date"
         // 日本語で検索しても大丈夫なようにした
         let url = text.addingPercentEncoding(withAllowedCharacters:.urlQueryAllowed)!
         
@@ -140,7 +106,7 @@ class Page1ViewController: UITableViewController,SegementSlideContentScrollViewD
                     let channelTittle = json["items"][i]["snippet"]["channelTitle"].string
                     
                     
-                    self.videoIDArray.append(videoId!) 
+                    self.videoIDArray.append(videoId!)
                     self.publishedAtArray.append(publishedAt!)
                     self.imageURLStringArray.append(imageURLString!)
                     self.youtubeURLArray.append(youtubeURL)
@@ -172,3 +138,4 @@ class Page1ViewController: UITableViewController,SegementSlideContentScrollViewD
     }
     
 }
+
