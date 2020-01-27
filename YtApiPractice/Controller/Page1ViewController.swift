@@ -38,13 +38,24 @@ class Page1ViewController: UITableViewController,SegementSlideContentScrollViewD
     }
     
     // セクションの数
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        
-//    }
-//
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//
-//    }
+    //    override func numberOfSections(in tableView: UITableView) -> Int {
+    //
+    //    }
+    //
+    
+        override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "Cell")
+            cell.selectionStyle = .none
+            let profileImageURL = URL(string: self.imageURLStringArray[indexPath.row] as String)!
+            cell.imageView?.sd_setImage(with: profileImageURL, completed: nil)
+            cell.textLabel?.text = self.titleArray[indexPath.row]
+            cell.detailTextLabel?.text = self.publishedAtArray[indexPath.row]
+            cell.textLabel?.adjustsFontSizeToFitWidth = true
+            cell.detailTextLabel?.adjustsFontSizeToFitWidth = true
+            cell.detailTextLabel?.numberOfLines = 5
+            
+            return cell
+    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return titleArray.count
@@ -67,13 +78,12 @@ class Page1ViewController: UITableViewController,SegementSlideContentScrollViewD
             
             // Json解析
             // 40個返ってくるのでfor文で入れていく
-                   
+            
             print(responce)
             
-            switch responce.request{
+            switch responce.result{
                 
-                
-            case .succes:
+            case .success:
                 
                 for i in 0...39{
                     
@@ -107,7 +117,7 @@ class Page1ViewController: UITableViewController,SegementSlideContentScrollViewD
                 
                 break
                 
-                case .failure(let error):
+            case .failure(let error):
                 print(error)
                 break
             }
@@ -116,7 +126,11 @@ class Page1ViewController: UITableViewController,SegementSlideContentScrollViewD
             
         }
         
-      
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let indexNumber = indexPath.row
     }
     
 }
