@@ -16,6 +16,7 @@ class Page5ViewController: UITableViewController,SegementSlideContentScrollViewD
     
     var youtubeData = YoutubeData()
     
+    // 配列に入れる
     var videoIDArray = [String]()
     var publishedAtArray = [String]()
     var titleArray = [String]()
@@ -37,19 +38,26 @@ class Page5ViewController: UITableViewController,SegementSlideContentScrollViewD
         return tableView
     }
     
-    // セクションの数
-    //    override func numberOfSections(in tableView: UITableView) -> Int {
-    //
-    //    }
-    //
+     // セクションの数
+        override func numberOfSections(in tableView: UITableView) -> Int {
+    
+            return 1
+        }
+    
     
         override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "Cell")
             cell.selectionStyle = .none
             let profileImageURL = URL(string: self.imageURLStringArray[indexPath.row] as String)!
-            cell.imageView?.sd_setImage(with: profileImageURL, completed: nil)
+            
+            cell.imageView?.sd_setImage(with: profileImageURL, completed: {(image, error,_,_) in
+                if error == nil {
+                    cell.setNeedsLayout()
+                }
+            })
+            
+            
             cell.textLabel?.text = self.titleArray[indexPath.row]
-            cell.detailTextLabel?.text = self.publishedAtArray[indexPath.row]
             cell.textLabel?.adjustsFontSizeToFitWidth = true
             cell.detailTextLabel?.adjustsFontSizeToFitWidth = true
             cell.detailTextLabel?.numberOfLines = 5
@@ -69,7 +77,7 @@ class Page5ViewController: UITableViewController,SegementSlideContentScrollViewD
     
     func getData() {
         
-        var text = "https://www.googleapis.com/youtube/v3/search?key=APIKEY&q=English&part=snippet&maxResults=40&order=date"
+        var text = "https://www.googleapis.com/youtube/v3/search?key=AIzaSyBK_hJnj10ZhuF2nO9OcLptvAgsl2A-YEk&q=English&part=snippet&maxResults=20&order=date"
         // 日本語で検索しても大丈夫なようにした
         let url = text.addingPercentEncoding(withAllowedCharacters:.urlQueryAllowed)!
         
@@ -85,29 +93,25 @@ class Page5ViewController: UITableViewController,SegementSlideContentScrollViewD
                 
             case .success:
                 
-                for i in 0...39{
+                for i in 0...19{
                     
                     let json:JSON = JSON(responce.data as Any)
                     // videoId
                     let videoId = json["items"][i]["id"]["videoId"].string
-                    
-                    // publishedAt
-                    let publishedAt = json["items"][i]["snippet"]["publishedAt"].string
-                    
+            
                     // title
                     let title = json["items"][i]["snippet"]["title"].string
                     
                     // imageUrlString
-                    let imageURLString = json["items"][i]["snippet"]["thumbnails"]["defalut"]["url"].string
+                    let imageURLString = json["items"][i]["snippet"]["thumbnails"]["default"]["url"].string
                     
                     // youtubeのurl作成
-                    let youtubeURL = "https://www.youtube.com/watch?v=\(videoId)"
+                    let youtubeURL = "https://www.youtube.com/watch?v=\(videoId!)"
                     
                     let channelTittle = json["items"][i]["snippet"]["channelTitle"].string
                     
                     
                     self.videoIDArray.append(videoId!)
-                    self.publishedAtArray.append(publishedAt!)
                     self.imageURLStringArray.append(imageURLString!)
                     self.youtubeURLArray.append(youtubeURL)
                     self.channelTitleArray.append(channelTittle!)

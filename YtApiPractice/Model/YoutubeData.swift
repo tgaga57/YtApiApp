@@ -14,8 +14,8 @@ class YoutubeData {
     var videoID:String = ""
     var publishedAt:String = ""
     var title:String = ""
-    var imageUrlString:String = ""
-    var YoutubeUrl:String = ""
+    var imageURLString:String = ""
+    var YoutubeURL:String = ""
     var channelTitle:String = ""
 
     
